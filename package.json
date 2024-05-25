@@ -4,7 +4,7 @@
   "description": "This is react project by PBK",
   
   "scripts": {
-    "start":"parcel index.html",
+    "itbabe":"parcel index.html",
     "build":"parcel build index.html",
     "test": "jest"
   },

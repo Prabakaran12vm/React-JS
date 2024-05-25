@@ -1,37 +1,26 @@
 import React from "react"
-import ReactDOM  from "react-dom"
-const heading  = React.createElement(
-    "h1",
-    {id:"heading"},
-    "Hello React" 
+import ReactDOM  from "react-dom/client"
 
+// const heading  = React.createElement(
+//     "h1",
+//     {id:"headding"},
+//     "Namaste React"
+// );
+
+const Title = ()=>(<h1 className="head" tabIndex={"5"}> Component Composition</h1>)    
+const name = null
+
+const HeadingComponent  = ()=>(
+    <div>
+        <Title/>
+        {/* {Title} */}
+        <h1>
+            This is Insane
+        </h1>
+        </div>
 )
-const footer = React.createElement(
-    "h2",
-    {id:"footer"},
-    "This is FOOTER"
-)
+// console.log(dummy)
 
-{/* <div id="parent">
-<div id="child" >
-    <h1></h1>
-    <h2></h2>    
-</div>
-
-</div> */}
-const parent = React.createElement(
-"div", 
-{id:"parent"}, 
-React.createElement(
-    "div", 
-{id:"child"},
-[React.createElement("h1", {}, "This is H1 from child"),
-React.createElement("h2", {}, "This is H2 from child")
-]))
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(heading)
-root.render(parent)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent/>)
+// root.render(heading);
