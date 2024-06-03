@@ -6,3 +6,7 @@ Default export / import
 Named export/import
 - using export keyword in front of variables or comps which we want to export
 - using {variable name} for import
+
+React Hooks
+- useState
+- useEffect
