@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./Restaurantcard";
-import resList from "../utils/mockdata";
+import Shimmer from "./shimmerUI";
 const Body = ()=>{
-    const [list0fRes, setlist0fRes] = useState(resList) 
+    const [list0fRes, setlist0fRes] = useState([]) 
     useEffect(()=>{
 
         fetchData()
@@ -12,8 +12,12 @@ const Body = ()=>{
         );  
         const json = await data.json()
         console.log(json)
-        setlist0fRes(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+        // optional chaining
+        setlist0fRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         // data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    }
+    if (list0fRes.length === 0){
+        return (<Shimmer/>);
     }
 
     return (
@@ -21,16 +25,8 @@ const Body = ()=>{
         <div className="filter">
 
             <button className="filter-btn" onClick={()=>{
-                const filteredres  = list0fRes.filter((res) => res.info.avgRating > 3.9);
+                const filteredres  = list0fRes.filter((res) => res.info.avgRating > 4);
                 setlist0fRes(filteredres);
-                // if (filteredres.length = 0 ){
-                //     console.log("No Restaurants Found")
-                // };
-                
-
-                
-                
-                
             }}>
                 Top Restaurants
             </button>

@@ -31,7 +31,8 @@
     
 }
 .res-card{
-    padding: 5px;    
+    padding: 5px;  
+      
     width: 200px;
     
     margin: 15px;
@@ -40,9 +41,9 @@
 
 }
 .res-logo{
-    /* padding: 10px; */
+    height: 180px;
     margin: 5px;
-    width: 190px;
+    width: 200px;
 }
 .res-container{
     display: flex;
@@ -61,4 +62,16 @@
     margin: 5px;
     /* display: inline-block; */
     text-align: center;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.shimmer-card{
+    padding: 5px;   
+    height: 400px;
+    width: 200px;
+    background-color: rgb(63, 63, 63);
+    margin: 15px;
 }
