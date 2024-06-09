@@ -16,14 +16,15 @@ const Body = ()=>{
         setlist0fRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         // data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     }
-    if (list0fRes.length === 0){
-        return (<Shimmer/>);
-    }
 
-    return (
+    return list0fRes.length === 0?<Shimmer/> : (
     <div className="body">
         <div className="filter">
-
+            <div className="search">
+                <input type="text" className="search-box" />
+                <button>Search</button>
+            </div>
+            
             <button className="filter-btn" onClick={()=>{
                 const filteredres  = list0fRes.filter((res) => res.info.avgRating > 4);
                 setlist0fRes(filteredres);

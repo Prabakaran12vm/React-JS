@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import logo from '../../images/logo.png'
-const Header = ()=>(
+const Header = ()=>{
+    const[loginBtn,setauth]  =useState("Login") 
+    return (
     
     <div className="header">
         <div className="logo-container">
@@ -13,10 +16,15 @@ const Header = ()=>(
                 <li>About Us</li>
                 <li>Contact</li>
                 <li>Cart</li>
-            </ul>
-
+          
+            <button className='login' onClick={()=>{
+            loginBtn ==="Login"
+            ? setauth("Logout")
+            : setauth("Login");
+        }}>{loginBtn}</button>
+          </ul>
         </div>
     </div>
 )
-
+}
 export default Header;
