@@ -7,7 +7,6 @@ const Body = () => {
   const [list0fRes, setlist0fRes] = useState([]);
   const [filteredRes, setFilteredRes] = useState(list0fRes);
   const [searchText, setSearchText] = useState("");
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -21,6 +20,7 @@ const Body = () => {
     setlist0fRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+
     setFilteredRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -37,20 +37,18 @@ const Body = () => {
             type="text"
             value={searchText}
             onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-            className="search-box"
-          />
-          <button
-            onClick={() => {
+              // setSearchText(e.target.value);
+              // searchText = e.target.value
+              setSearchText(e.target.value)
+
               const filteredRes = list0fRes.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText)
               );
               setFilteredRes(filteredRes);
             }}
-          >
-            Search
-          </button>
+            className="search-box"
+          />
+          <button onClick={() => {setFilteredRes(filteredRes);}}>Search</button>
         </div>
 
         <button

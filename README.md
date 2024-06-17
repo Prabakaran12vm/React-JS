@@ -10,3 +10,4 @@ Named export/import
 React Hooks
 - useState
 - useEffect
+- useEffect is called everytime when header is rendered
