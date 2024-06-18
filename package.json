@@ -2,10 +2,9 @@
   "name": "y",
   "version": "1.0.0",
   "description": "This is react project by PBK",
-  
   "scripts": {
-    "itbabe":"parcel index.html",
-    "build":"parcel build index.html",
+    "itbabe": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -28,13 +27,11 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1"
   },
-  "browsersList":[
+  "browsersList": [
     "last 2 Chrome version",
     "last 2 mozilla version"
   ]
-    
-  
-
 }
