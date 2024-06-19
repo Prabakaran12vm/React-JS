@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./Restaurantcard";
 import Shimmer from "./shimmerUI";
+import { FOOD_API } from "../utils/constants";
 // whenver there is a change in state variable react will rerender the state variable
 
 const Body = () => {
   const [list0fRes, setlist0fRes] = useState([]);
+  console.log(typeof(list0fRes))
   const [filteredRes, setFilteredRes] = useState(list0fRes);
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.7464655&lng=79.986519&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(FOOD_API
+       );
     const json = await data.json();
     // console.log(json)
     // optional chaining
@@ -25,6 +26,7 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     // data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    console.log(list0fRes)
   };
 
   return list0fRes.length === 0 ? (
