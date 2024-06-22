@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./Restaurantcard";
 import Shimmer from "./shimmerUI";
 import { FOOD_API } from "../utils/constants";
+import { Link } from "react-router-dom";
 // whenver there is a change in state variable react will rerender the state variable
 
 const Body = () => {
   const [list0fRes, setlist0fRes] = useState([]);
-  console.log(typeof(list0fRes))
+  // console.log(typeof(list0fRes))
   const [filteredRes, setFilteredRes] = useState(list0fRes);
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const data = await fetch(FOOD_API
+    const data = await fetch(
+      FOOD_API
        );
     const json = await data.json();
     // console.log(json)
@@ -66,7 +68,11 @@ const Body = () => {
 
       <div className="res-container">
         {filteredRes.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
+          <RestaurantCard 
+          
+           resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

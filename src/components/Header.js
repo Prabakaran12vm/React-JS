@@ -3,7 +3,7 @@ import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [loginBtn, setauth] = useState("Login");
-  useEffect(() => console.log("Use Effect is called"));
+
   return (
     <div className="header">
       <div className="logo-container">
