@@ -88,3 +88,14 @@
     /* display: inline-block; */
     text-align: center;
 }
+.user-card{
+    
+    padding: 10px;
+    border: 1px solid white;
+
+}
+.userclass-card{
+    padding: 10px;
+    border: 1px solid white;
+
+}
