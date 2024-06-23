@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmerUI";
-import {useParams} from 'react-router-dom';
+import {isRouteErrorResponse, useParams} from 'react-router-dom';
 import { MENU_ID } from "../utils/constants";
 
 const RestaurantMenu = () => {
@@ -24,6 +24,10 @@ const RestaurantMenu = () => {
   
   const { itemCards } =
     resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
+  console.log(itemCards.length)
+    // if (itemCards.length == 1){
+  //   <h1>ITEMS ARE EMPTY</h1>
+  // }  
 
   return (
     <div className="res_menu">
@@ -32,7 +36,7 @@ const RestaurantMenu = () => {
       <h2>{cuisines}</h2>
       <h2>{avgRating}</h2>
       <ul>
-              
+             
         {itemCards.map((item) => (
           
           <li key={item.card.info.id}>
