@@ -24,10 +24,9 @@ const RestaurantMenu = () => {
   
   const { itemCards } =
     resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
-  console.log(itemCards.length)
-    // if (itemCards.length == 1){
-  //   <h1>ITEMS ARE EMPTY</h1>
-  // }  
+    // Brooklyn Creamery API BUG
+    // data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.categories[0].itemCards
+
 
   return (
     <div className="res_menu">
@@ -35,6 +34,7 @@ const RestaurantMenu = () => {
       <h1>{name}</h1>
       <h2>{cuisines}</h2>
       <h2>{avgRating}</h2>
+      {console.log(itemCards)}
       <ul>
              
         {itemCards.map((item) => (

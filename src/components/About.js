@@ -6,8 +6,8 @@ const About = ()=>{
 <div>
     <h1>About</h1>
     <h2>Developed by PBK</h2>
-    <User name = {"PBK"}/>
-    <UserClass name = {"PBK"}/>
+    <User name = {"Function"}/>
+    <UserClass name = {"class !"}/>
 </div>)
 }
 export default About;
