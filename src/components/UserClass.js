@@ -1,13 +1,13 @@
 import React from "react";
 import User from "./User";
-import { json } from "react-router-dom";
+import { GIT_URL } from "../utils/constants";
 
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       UserInfo:{
-        shit: "shit"
+        
 
       }
       
@@ -15,7 +15,7 @@ class UserClass extends React.Component {
     // console.log("constructor")
   }
   async componentDidMount(){
-    const data = await fetch("https://api.github.com/users/prabakaran12vm")
+    const data = await fetch(GIT_URL)
     const json = await data.json()
     // console.log(json)
     this.setState({

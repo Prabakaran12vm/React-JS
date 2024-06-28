@@ -60,6 +60,7 @@ const Body = () => {
           onClick={() => {
             const topRes = list0fRes.filter((res) => res.info.avgRating > 4);
             setFilteredRes(topRes);
+
           }}
         >
           Top Restaurants
@@ -67,13 +68,16 @@ const Body = () => {
       </div>
 
       <div className="res-container">
+        
         {filteredRes.map((restaurant) => (
-          <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
+          <Link key={restaurant.info.id}  to={"/restaurant/" + restaurant.info.id}>
           <RestaurantCard 
           
            resData={restaurant} />
           </Link>
-        ))}
+        ))}{
+          console.log(filteredRes[1].info.id)
+        }
       </div>
     </div>
   );
