@@ -3,6 +3,7 @@ import RestaurantCard from "./Restaurantcard";
 import Shimmer from "./shimmerUI";
 import { FOOD_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // whenver there is a change in state variable react will rerender the state variable
 
 const Body = () => {
@@ -12,6 +13,7 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  
   const fetchData = async () => {
     const data = await fetch(
       FOOD_API
@@ -29,6 +31,11 @@ const Body = () => {
     // data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     
   };
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus ===false){
+    return <h1>Looks like offline!</h1>
+  }
+  
 
   return list0fRes.length === 0 ? (
     <Shimmer />
