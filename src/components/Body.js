@@ -24,7 +24,7 @@ const Body = () => {
     setlist0fRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-
+    // setFilteredRes(list0fRes)
     setFilteredRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -36,7 +36,6 @@ const Body = () => {
     return <h1>Looks like offline!</h1>
   }
   
-
   return list0fRes.length === 0 ? (
     <Shimmer />
   ) : (

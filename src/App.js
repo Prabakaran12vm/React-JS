@@ -7,6 +7,7 @@ import About from "./components/About.js";
 import Contact from "./components/Contact.js";
 import Error from "./components/Error.js";
 import RestaurantMenu from "./components/RestaurantMenu.js";
+import Grocery from "./components/Grocery.js";
 
 const AppLayout = () => {
   return (
@@ -21,11 +22,14 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     children: [
-        {
-            path:"/",
-            element:<Body/>
-            
-        },
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path:"/grocery",
+        element:<Grocery/>
+      },
       {
         path: "/about",
         element: <About />,
@@ -35,9 +39,9 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path:"/restaurant/:resid",
-        element: <RestaurantMenu/>
-      }
+        path: "/restaurant/:resid",
+        element: <RestaurantMenu />,
+      },
     ],
     errorElement: <Error />,
   },
