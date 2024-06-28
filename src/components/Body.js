@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 const Body = () => {
   const [list0fRes, setlist0fRes] = useState([]);
-  // console.log(typeof(list0fRes))
   const [filteredRes, setFilteredRes] = useState(list0fRes);
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
@@ -28,7 +27,7 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     // data.cards[1].card.card.gridElements.infoWithStyle.restaurants
-    console.log(list0fRes)
+    
   };
 
   return list0fRes.length === 0 ? (
@@ -41,8 +40,7 @@ const Body = () => {
             type="text"
             value={searchText}
             onChange={(e) => {
-              // setSearchText(e.target.value);
-              // searchText = e.target.value
+             
               setSearchText(e.target.value)
 
               const filteredRes = list0fRes.filter((res) =>
@@ -76,7 +74,7 @@ const Body = () => {
            resData={restaurant} />
           </Link>
         ))}{
-          console.log(filteredRes[1].info.id)
+
         }
       </div>
     </div>

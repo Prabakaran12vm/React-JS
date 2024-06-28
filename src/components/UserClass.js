@@ -12,12 +12,11 @@ class UserClass extends React.Component {
       }
       
     };
-    // console.log("constructor")
+    
   }
   async componentDidMount(){
     const data = await fetch(GIT_URL)
     const json = await data.json()
-    // console.log(json)
     this.setState({
 
       UserInfo: json

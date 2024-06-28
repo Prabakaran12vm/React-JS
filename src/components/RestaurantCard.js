@@ -11,13 +11,12 @@ const RestaurantCard = (props) => {
         alt="reslogo"
         src={CDN_URL + cloudinaryImageId}
       />
-      {/* <h3>WHY ME</h3> */}
+      
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating}</h4>
       <h4>{costForTwo}</h4>
-      {/* <h4>{props.cousine}</h4>
-        <h4>{props.rating}</h4> */}
+      
     </div>
   );
 };

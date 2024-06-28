@@ -10,9 +10,8 @@ const RestaurantMenu = () => {
     return <Shimmer />;
   }
   
-  // data.cards[2].card.card.info.name
+  
   const { name, cuisines, avgRating } = resInfo?.cards[2].card.card.info
-  // cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[12]?.card?.card?.itemCards[9].card.info.name
   
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card

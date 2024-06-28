@@ -1,7 +1,7 @@
 import { useState } from "react"
 import UserClass from "./UserClass"
 const User = (props) =>{
-    // const {name} = props
+    
     const count = 0
     const {name} = props
     return (
