@@ -6,7 +6,7 @@ const Error = () => {
     <div>
       <h1>Oops !</h1>
       <h2>Page Not Found !!</h2>
-      <h3>{err.status+ " " + err.error.message}</h3>
+      <h3>{err.status}</h3>
     </div>
   );
 };
