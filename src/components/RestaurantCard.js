@@ -5,17 +5,17 @@ const RestaurantCard = (props) => {
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resData?.info; // Destructuring
   return (
-    <div className="res-card" style={{ backgroundColor: "rgb(63, 63, 63)" }}>
+    <div className="m-4 p-4 w-[200px] shadow-lg font-sans " >
       <img
-        className="res-logo"
+        className="rounded-lg w-[200px] h-[150px]"
         alt="reslogo"
         src={CDN_URL + cloudinaryImageId}
       />
       
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{costForTwo}</h4>
+      <h3 className="font-bold text-gray-700">{name}</h3>
+      <h4 className="text-gray-600">{cuisines.join(", ")}</h4>
+      <h4 className="">{avgRating}Stars</h4>
+      <h4 className="text-gray-600">{costForTwo}For Two</h4>
       
     </div>
   );
