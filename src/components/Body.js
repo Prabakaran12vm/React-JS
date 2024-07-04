@@ -38,7 +38,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter flex">
-        <div className="search m-4 p-4 ">
+        <div className="search ml-[30%] p-4 ">
           <input
             type="text"
             className="border border-solid border-black"
@@ -53,7 +53,7 @@ const Body = () => {
             }}
           />
           <button
-            className="px-4 py-2 m-4 bg-gray-200 shadow-lg"
+            className="px-4 py-2 m-4 bg-gray-200   rounded-md hover:text-orange-500 text-gray-600 font-semibold"
             onClick={() => {
               setFilteredRes(filteredRes);
             }}
@@ -63,7 +63,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="px-4 py-2 bg-gray-200 rounded-lg"
+            className="px-4 py-2 bg-gray-200 rounded-lg rounded-md hover:text-orange-500 text-gray-600 font-semibold"
             onClick={() => {
               const topRes = list0fRes.filter((res) => res.info.avgRating > 4);
               setFilteredRes(topRes);
@@ -74,7 +74,7 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="ml-[50px] flex flex-wrap shadow-sm">
+      <div className="ml-[50px] flex flex-wrap ">
         {filteredRes.map((restaurant) => (
           <Link
             key={restaurant.info.id}
