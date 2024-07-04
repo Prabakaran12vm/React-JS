@@ -5,22 +5,22 @@ const Header = () => {
   const [loginBtn, setauth] = useState("Login");
 
   return (
-    <div className="flex justify-between shadow-md">
+    <div className="flex justify-between shadow-md  text-gray-600 font-semibold">
       <div className="logo-container">
-        <img className="w-20" src={logo} />
+        <Link to={"/"}><img className="w-20 hover:scale-[1.1]" src={logo} /></Link> 
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center ">
         <ul className="flex p-4 m-4 ">
-          <li className="px-4">
+          <li className="px-4 hover:text-orange-500">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-4">
-            <Link to="/about">About Us</Link>
+          <li className="px-4 hover:text-orange-500">
+            <Link to="/about">About</Link>
           </li>
-          <li className="px-4">
+          <li className="px-4 hover:text-orange-500">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="px-4">
+          <li className="px-4 hover:text-orange-500">
             <Link to="/grocery">Grocery</Link>
           </li>
 
