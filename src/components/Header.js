@@ -5,7 +5,7 @@ const Header = () => {
   const [loginBtn, setauth] = useState("Login");
 
   return (
-    <div className="flex justify-between shadow-md  text-gray-600 font-semibold">
+    <div className="flex justify-between shadow-md   text-gray-600 font-semibold">
       <div className="logo-container">
         <Link to={"/"}><img className="w-20 hover:scale-[1.1]" src={logo} /></Link> 
       </div>
