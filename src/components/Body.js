@@ -26,14 +26,23 @@ const Body = () => {
     setFilteredRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    // console.log(json.data.cards[4].card.card.info[0].stackedDetails.favRestaurantInfoCard.restaurants)
+    // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[6].info.differentiatedUi)
     // data.cards[1].card.card.gridElements.infoWithStyle.restaurants
   };
   const onlineStatus = useOnlineStatus();
+  if (list0fRes == null) {
+    return (
+      <div>
+        <h1 className="text-center">Empty</h1>
+      </div>
+    );
+  }
   if (onlineStatus === false) {
     return <h1>Looks like offline!</h1>;
   }
 
-  return list0fRes.length === 0 ? (
+  return list0fRes === null ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -41,7 +50,7 @@ const Body = () => {
         <div className="search ml-[30%] p-4 ">
           <input
             type="text"
-            className="border border-solid border-black"
+            className="border rounded-lg border-solid focus:ring-blue-500 focus:border-blue-500  border-gray-700"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -61,9 +70,9 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center">
+        <div className="search m-4 p-4 flex items-center ">
           <button
-            className="px-4 py-2 bg-gray-200 rounded-lg rounded-md hover:text-orange-500 text-gray-600 font-semibold"
+            className="px-4 py-2 bg-gray-200 rounded-md hover:text-orange-500 text-gray-600 font-semibold"
             onClick={() => {
               const topRes = list0fRes.filter((res) => res.info.avgRating > 4);
               setFilteredRes(topRes);
