@@ -11,3 +11,6 @@ React Hooks
 - useState
 - useEffect
 - useEffect is called everytime when header is rendered
+Redux Toolkit
+- Install redux toolkit and react redux
+- 
