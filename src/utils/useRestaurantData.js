@@ -15,7 +15,7 @@ const useRestaurantData = () => {
     setFilteredRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log("This is PBK")
+    console.log("This is PBK");
   };
   return [listOfRes, filteredRes];
 };
