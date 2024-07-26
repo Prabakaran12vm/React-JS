@@ -6,8 +6,7 @@ const RestaurantCard = (props) => {
     resData?.info; // Destructuring
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-   
-    return (
+  return (
     <div className="m-4 p-4 w-[200px] h-[350px]  shadow-xl font-sans rounded-md    hover:scale-[0.99]">
       <img
         className="rounded-lg w-[220px] h-[138.5px] "
@@ -28,7 +27,7 @@ export const withPromotedLabel = (RestaurantCard) => {
     return (
       <div>
         <label>Promoted</label>
-        <RestaurantCard/>
+        <RestaurantCard />
       </div>
     );
   };
