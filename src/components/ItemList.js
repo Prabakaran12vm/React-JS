@@ -1,8 +1,17 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import {addItem} from '../utils/cartSlice'
 
 const ItemList = ({ items }) => {
   // data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards[0].card.info
-  // const {info}=items?.card.
+  const dispatch = useDispatch();
+
+
+  const handleAdd = (temp)=>(
+    // dispatch an action
+    dispatch(addItem(temp))
+  )
+  // const {dummy } = item.card.info.name
   return (
     <div>
       {items.map((item) => (
@@ -32,8 +41,8 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-4/12 p-4">
             <div className="absolute ml-12 mt-28 ">
-              <button className="p-2 font-bold w-28 text-green-600 bg-white rounded-lg shadow-lg m-auto">
-                ADD
+              <button onClick={()=>handleAdd(item.card.info.name)} className="p-2 font-bold w-28 text-green-600 bg-white rounded-lg shadow-lg m-auto">
+              ADD
               </button>
             </div>
             <img

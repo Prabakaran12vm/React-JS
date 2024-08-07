@@ -7,8 +7,8 @@ const Header = () => {
   const [loginBtn, setauth] = useState("Login");
   const data = useContext(UserContext);
   // selector for subscribing
-  const cartItem = useSelector((store)=>store.cart.items) 
-
+  const cartItem = useSelector((store) => store.cart.items);
+  console.log(cartItem);
   return (
     <div className="flex justify-between shadow-md   text-gray-600 font-semibold">
       <div className="logo-container ml-2">
