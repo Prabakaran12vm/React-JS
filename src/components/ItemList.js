@@ -7,9 +7,9 @@ const ItemList = ({ items }) => {
   const dispatch = useDispatch();
 
 
-  const handleAdd = (temp)=>(
+  const handleAdd = (item)=>(
     // dispatch an action
-    dispatch(addItem(temp))
+    dispatch(addItem(item))
   )
   // const {dummy } = item.card.info.name
   return (
@@ -41,7 +41,7 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-4/12 p-4">
             <div className="absolute ml-12 mt-28 ">
-              <button onClick={()=>handleAdd(item.card.info.name)} className="p-2 font-bold w-28 text-green-600 bg-white rounded-lg shadow-lg m-auto">
+              <button onClick={()=>handleAdd(item)} className="p-2 font-bold w-28 text-green-600 bg-white rounded-lg shadow-lg m-auto">
               ADD
               </button>
             </div>
