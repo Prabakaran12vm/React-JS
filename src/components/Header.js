@@ -24,11 +24,8 @@ const Header = () => {
           <li className="px-4 hover:text-orange-500">
             <Link to="/about">About</Link>
           </li>
-          <li className="px-4 hover:text-orange-500">
-            <Link to="/contact">Cart - ({cartItem.length})</Link>
-          </li>
-          <li className="px-4 hover:text-orange-500">
-            <Link to="/grocery">Grocery</Link>
+          <li className="px-4 hover:text-orange-500 font-bold" >
+            <Link to="/cart">Cart - ({cartItem.length})</Link>
           </li>
 
           <button
