@@ -47,7 +47,7 @@ const ItemList = ({ items }) => {
             </div>
             <img
               //   className="w-auto max-w-[156px] cursor:pointer  h-auto max-h-[144px] py-0  rounded-2xl text-right px-2 "
-              className="w-full rounded-2xl max-h-[144px]"
+              className=" w-full max-w-[250px] rounded-2xl  max-h-[144px]"
               src={CDN_URL + item.card.info.imageId}
             ></img>
           </div>
