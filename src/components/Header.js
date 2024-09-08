@@ -29,7 +29,7 @@ const Header = () => {
           </li>
 
           <button
-            className="login"
+            className="login" name="login"
             onClick={() => {
               loginBtn === "Login" ? setauth("Logout") : setauth("Login");
             }}

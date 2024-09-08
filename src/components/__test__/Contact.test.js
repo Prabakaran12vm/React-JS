@@ -5,7 +5,7 @@ import { render,screen } from "@testing-library/react";
 test ("should load Contact Us component", ()=>{
     render(<Contact/>);
 
-    const button = screen.getByText("button")
+    const button = screen.getByRole("button")
     
     // Assertion
     expect(button).toBeInTheDocument();
