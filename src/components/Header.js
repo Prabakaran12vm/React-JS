@@ -3,19 +3,29 @@ import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+
+
+
 const Header = () => {
   const [loginBtn, setauth] = useState("Login");
   const data = useContext(UserContext);
   // selector for subscribing
   const cartItem = useSelector((store) => store.cart.items);
-  console.log(cartItem);
+
   return (
     <div className="flex justify-between shadow-md   text-gray-600 font-semibold">
+      <motion.div whileHover={{
+      scale: 1.15,
+      transition: { duration: 0.15 },
+    }}
+    whileTap={{ scale:1 }}>
       <div className="logo-container ml-2">
         <Link to={"/"}>
-          <img className="w-20 hover:scale-[1.1]" src={logo} />
+          <img className="w-20 " src={logo} />
         </Link>
       </div>
+      </motion.div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4 ">
           <li className="px-4 hover:text-orange-500">
