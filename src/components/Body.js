@@ -84,7 +84,7 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="ml-[50px] flex flex-wrap ">
+      <div className="ml-[50px] flex flex-wrap grid grid-cols-4 gap-2">
         {filteredRes.map((restaurant) => (
           <Link
             key={restaurant.info.id}
