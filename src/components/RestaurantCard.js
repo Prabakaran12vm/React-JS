@@ -1,4 +1,5 @@
 import { CDN_URL } from "../utils/constants";
+import { motion } from "framer-motion";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -7,7 +8,15 @@ const RestaurantCard = (props) => {
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   return (
-    <div className="m-4 p-4 w-[200px] h-[350px]  shadow-xl font-sans rounded-md    hover:scale-[0.99]">
+    <motion.div 
+    whileHover={{
+      scale: 0.98,
+      transition: { duration: 0.1 },
+    }}
+    whileTap={{ scale:1 }}
+    >
+      {/* hover:scale-[0.99] */}
+    <div className="p-4 w-[250px] h-[350px]  border-b-2 font-sans rounded-md ">
       <img
         className="rounded-lg w-[220px] h-[138.5px] "
         alt="reslogo"
@@ -19,6 +28,7 @@ const RestaurantCard = (props) => {
       <h4 className="text-gray-600">{avgRating}Stars</h4>
       <h4 className="text-gray-600">{costForTwo}For Two</h4>
     </div>
+    </motion.div>
   );
 };
 
