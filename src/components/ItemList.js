@@ -1,12 +1,13 @@
 import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import {addItem} from '../utils/cartSlice'
+import { useLocation } from "react-router-dom";
+
 
 const ItemList = ({ items }) => {
   // data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards[0].card.info
   const dispatch = useDispatch();
-
-
+  const pathName = useLocation().pathname
   const handleAdd = (item)=>(
     // dispatch an action
     dispatch(addItem(item))
@@ -41,9 +42,10 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-4/12 p-4">
             <div className="absolute ml-12 mt-28 ">
-              <button onClick={()=>handleAdd(item)} className="p-2 font-bold w-28 text-green-600 bg-white rounded-lg shadow-lg m-auto">
+              {pathName == "/cart" ? <></>  : <button onClick={()=>handleAdd(item)} className="p-2 font-bold w-28 text-green-600 bg-white rounded-lg shadow-lg m-auto">
               ADD
-              </button>
+              </button> }
+              
             </div>
             <img
               //   className="w-auto max-w-[156px] cursor:pointer  h-auto max-h-[144px] py-0  rounded-2xl text-right px-2 "
